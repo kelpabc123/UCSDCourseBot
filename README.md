@@ -4,6 +4,7 @@
  ## Table of contents
  * [Introduction](#introduction)
  * [Project Status](#project-status)
+ * [Packages used](#packages-used)
 
  ## Introduction
  UCSD has plenty of courses, and honestly its a mess to make sense of all of it! This bot scrapes the UCSD course catalog and tries to find the information you need.
