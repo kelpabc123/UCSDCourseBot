@@ -11,3 +11,7 @@
  ## Project Status
  I just literally started, so this will take a while to set up. Current plans include implementing a web scraper (and the discord bot). Further additions to the bot might eventually include building a prerequisite tree for each class to identify key prerequisites.
 
+ ## Packages used
+ The packages used in this bot include
+ * BeautifulSoup
+ * Requests
