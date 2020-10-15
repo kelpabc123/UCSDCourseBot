@@ -18,7 +18,8 @@ class MyCourse:
         titleID = titleArr[0] + " " + titleArr[1]
         self.id = titleID.strip(" .")
         self.dept = titleArr[0]
-        self.title = titleArr[1].strip() #includes units, TODO will figure out a way to parse/error check edge cases
+        self.title = title[len(titleID):].strip(" .") 
+        #includes units, TODO will figure out a way to parse/error check edge cases
         descBreakdown = desc.split("Prerequisites:")
         self.desc = descBreakdown[0].strip()
         if len(descBreakdown)!=1:

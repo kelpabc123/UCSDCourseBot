@@ -15,7 +15,7 @@ def updateCSV():
     master = BeautifulSoup(mreq.text, "lxml")
     headURL = "https://ucsd.edu/catalog/"
     csvFile = "data/courses.csv"
-    with open(csvFile,"a", newline="", encoding="utf-8") as f:
+    with open(csvFile,"w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
         for link in master.findAll("a", string="courses", multi_valued_attributes=None):
             linkURL = link['href']
