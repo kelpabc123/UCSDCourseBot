@@ -13,19 +13,26 @@ class MyCourse:
     ############ Constructor and  private/overloaded methods ############
 
     #Constructor for course object given string title and description
-    def __init__(self, title, desc):
-        titleArr = title.split(" ")
-        titleID = titleArr[0] + " " + titleArr[1]
-        self.id = titleID.strip(" .")
-        self.dept = titleArr[0]
-        self.title = title[len(titleID):].strip(" .") 
-        #includes units, TODO will figure out a way to parse/error check edge cases
-        descBreakdown = desc.split("Prerequisites:")
-        self.desc = descBreakdown[0].strip()
-        if len(descBreakdown)!=1:
-            self.prereq = descBreakdown[1].strip(" .") #prerequisites will be parsed into array eventually, handled later TODO
+    def __init__(self, title, desc, list, isList):
+        if isList == False:
+            titleArr = title.split(" ")
+            titleID = titleArr[0] + " " + titleArr[1]
+            self.id = titleID.strip(" .")
+            self.dept = titleArr[0]
+            self.title = title[len(titleID):].strip(" .") 
+            #includes units, TODO will figure out a way to parse/error check edge cases
+            descBreakdown = desc.split("Prerequisites:")
+            self.desc = descBreakdown[0].strip()
+            if len(descBreakdown)!=1:
+                self.prereq = descBreakdown[1].strip(" .") #prerequisites will be parsed into array eventually, handled later TODO
+            else:
+                self.prereq = "None"
         else:
-            self.prereq = "None"
+            self.id = list[0]
+            self.dept = list[1]
+            self.title = list[2]
+            self.desc = list[3]
+            self.prereq = list[4]
 
     #Constructor for course object given list read from .csv file
     #def __init__(self, list):
@@ -43,6 +50,10 @@ class MyCourse:
     def write(self, w):
         row = [self.id, self.dept, self.title, self.desc, self.prereq]
         w.writerow(row)
+
+    #Outputs full course description
+    def printCourse(self):
+        print(f"{self.id}. {self.title}\n{self.desc}\nPrerequisites: {self.prereq}")
 
 
     
