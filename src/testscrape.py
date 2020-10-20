@@ -10,10 +10,10 @@ cscraper.updateCSV()
 courses = cscraper.findCoursebyID("MaTh 170")
 for course in courses:
     course.printCourse()
-courses = cscraper.findCoursebyDesc("black lives")
+courses = cscraper.findCoursebyDesc("experiment")
 for course in courses:
     print(course)
-courses = cscraper.findCoursebyTitle("Intro")
+courses = cscraper.findCoursebyTitle("Materials")
 for course in courses:
     print(course)
 #url = "https://ucsd.edu/catalog/front/courses.html"
